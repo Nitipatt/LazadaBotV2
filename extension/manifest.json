@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+
+  "name": "Lazada bot",
+  "description": "Auto buy",
+  "version": "1.0",
+  "content_scripts": [{
+    "matches": [
+      "*://*/*"
+    ],
+    "js": [
+      "script/content.js"
+    ],
+    "all_frames": true
+  }],
+  "action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "tabs",
+    "activeTab"
+  ]
+}

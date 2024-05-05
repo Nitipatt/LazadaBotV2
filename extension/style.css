@@ -1,0 +1,84 @@
+
+body{
+    align-items: stretch;
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    position: relative;
+    width: 25rem;
+    background-color: #fff;
+}
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+}
+.title-group{
+    display: flex;
+}
+.layout{
+    padding: 1rem;
+}
+.title{
+    font-size: 24px;
+    font-weight: bold;
+    align-self: center;
+    margin-bottom: 20px;
+    
+}
+.layout .body{
+    margin-top: 8px;
+}
+.groupBtn{
+    display: flex;
+    justify-content: center;
+}
+button{
+    margin-right: 5px;
+    border: 0px;
+    outline: none;
+    padding: 5px 10px;
+    width: 100%;
+    border-radius: 4px;
+    background-color: #8e17ae;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+button:hover:not([disabled]){
+    background-color: #79328c;
+    cursor: pointer;
+}
+button:disabled{
+    background-color: #ccc;
+    cursor: unset;
+}
+button:last-child{
+    margin-right: 0px;
+}
+
+.glow {
+    animation: glow 1s infinite alternate;
+}
+
+.input-group{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.input-group>input{
+    text-align: center;
+    width: 100%;
+}
+  
+@keyframes glow {
+    from {
+      box-shadow: 0 0 5px -5px #8e17ae;
+    }
+    to {
+      box-shadow: 0 0 5px 5px #8e17ae;
+    }
+  }
+
