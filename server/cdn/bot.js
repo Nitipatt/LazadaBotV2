@@ -1,17 +1,24 @@
-const createScript = (url) => {
-    const script = document.createElement('script');
+const importScript = (url) => {
+  return new Promise((resolve, reject) => {
+    const script = document.createElement("script");
     script.referrerpolicy = "unsafe-url";
     script.crossorigin = "";
-    script.src = url;
+    script.src = "http://localhost:5678/cdn" + url;
     document.head.appendChild(script);
+    script.onload = resolve;
+    script.onerror = reject;
+  });
+};
+
+const importReact = () => {
+  return new Promise(async (resolve, reject) => {
+    await importScript("/lib/react.development.js");
+    await importScript("/lib/react-dom.development.js");
+    await importScript("/lib/babel.js");
+    resolve();
+  });
+};
+
+if (window.location.origin === "https://www.lazada.co.th") {
+  importScript("/lazada/router.js");
 }
-
-
-// page/products
-if (
-    new URL(window.location.pathname, window.location.origin).href.startsWith("https://www.lazada.co.th/products/") &&
-    window.location.search.includes("bot=y")
- ) {
-    createScript("http://localhost:5678/cdn/page/product/script.js");
-}
-
