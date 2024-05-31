@@ -10,14 +10,14 @@ const importScript = (url) => {
   });
 };
 
-const importReact = () => {
-  return new Promise(async (resolve, reject) => {
-    await importScript("/lib/react.development.js");
-    await importScript("/lib/react-dom.development.js");
-    await importScript("/lib/babel.js");
-    resolve();
-  });
-};
+// const importReact = () => {
+//   return new Promise(async (resolve, reject) => {
+//     await importScript("/lib/react.development.js");
+//     await importScript("/lib/react-dom.development.js");
+//     await importScript("/lib/babel.js");
+//     resolve();
+//   });
+// };
 
 if (window.location.origin === "https://www.lazada.co.th") {
   importScript("/lazada/router.js");

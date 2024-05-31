@@ -1,5 +1,5 @@
 const lazadaProductChannel = new BroadcastChannel("lazada-product");
-
+const lazadaCheckoutChannel = new BroadcastChannel("lazada-checkout");
 
 // Auto refresh after verify recaptcha
 lazadaProductChannel.onmessage = ({ data }) => {
